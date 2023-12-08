@@ -5,9 +5,9 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement Settings")]
     [SerializeField] private float walkSpeed = 3.0f;
-    [SerializeField] private float sprintSpeed = 6.0f; // New sprint speed
+    [SerializeField] private float sprintSpeed = 6.0f; 
     [SerializeField] private float jumpForce = 8.0f;
-    private float currentSpeed; // Current speed used in movement
+    private float currentSpeed;
 
     [Header("Look Settings")]
     [SerializeField] private float mouseSensitivity = 2.0f;
@@ -22,11 +22,8 @@ public class PlayerController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
         characterController = GetComponent<CharacterController>();
         playerCamera = GetComponentInChildren<Camera>();
-
-        // Set the default speed as the starting speed
         currentSpeed = walkSpeed;
     }
 
@@ -47,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            currentSpeed = walkSpeed; // Set back to default speed when SHIFT is released
+            currentSpeed = walkSpeed;
         }
     }
 
